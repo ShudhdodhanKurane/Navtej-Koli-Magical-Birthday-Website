@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Navtej Koli! 🎂✨</title>
+    <meta name="description" content="A magical birthday celebration for Navtej Koli — with love from his brother.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="none">
+        <source src="assets/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button (Fixed) -->
+    <button id="music-btn" class="music-toggle" aria-label="Toggle background music" title="Play / Pause Music">
+        <i class="bi bi-music-note-beamed"></i>
+    </button>
+
+    <!-- Back to Top Button (Fixed) -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top" title="Back to Top">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- Particles Canvas (Fixed Background) -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Floating Hearts Container -->
+    <div id="floating-hearts" aria-hidden="true"></div>
+
+    <!-- ===================== SECTION 1: WELCOME SCREEN ===================== -->
+    <div id="welcome-screen" class="welcome-screen" role="dialog" aria-label="Welcome">
+        <div class="welcome-content">
+            <div class="welcome-sparkle" aria-hidden="true">✨🌟✨</div>
+            <h1 class="welcome-title">A Magical Birthday Awaits</h1>
+            <p class="welcome-subtitle">For someone truly extraordinary…</p>
+            <h2 class="welcome-name" id="welcome-name" aria-live="polite"></h2>
+            <button id="enter-btn" class="enter-btn" type="button">
+                Enter the Magic <span aria-hidden="true">✨</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===================== SECTION 2: COUNTDOWN ===================== -->
+    <section id="countdown" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">⏳</span> Birthday Countdown <span class="heading-icon">⏳</span>
+            </h2>
+            <p class="section-subheading" id="countdown-message">The most magical day is almost here…</p>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span class="countdown-value" id="count-days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="count-hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="count-minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="count-seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 3: BIRTHDAY WISH HERO ===================== -->
+    <section id="birthday-wish" class="section-padding">
+        <div class="container text-center">
+            <p class="birthday-pre-text">🎉 Wishing You The Happiest 🎉</p>
+            <h1 class="birthday-title">Happy <span id="birthday-age">16th</span> Birthday!</h1>
+            <h2 class="birthday-name">NAVTEJ KOLI</h2>
+            <p class="birthday-subtitle">🎂 21 October 2010 — Our Star Turns <span id="age-text">16</span>! 🎂</p>
+            <div class="floating-elements" aria-hidden="true">
+                <span class="float-item balloon" style="--delay:0s; --x:-30vw;">🎈</span>
+                <span class="float-item balloon" style="--delay:1s; --x:-15vw;">🎈</span>
+                <span class="float-item balloon" style="--delay:2s; --x:10vw;">🎈</span>
+                <span class="float-item balloon" style="--delay:0.5s; --x:25vw;">🎈</span>
+                <span class="float-item heart" style="--delay:0.3s; --x:-20vw;">💖</span>
+                <span class="float-item heart" style="--delay:1.5s; --x:5vw;">💝</span>
+                <span class="float-item heart" style="--delay:2.5s; --x:20vw;">💗</span>
+                <span class="float-item star" style="--delay:0.8s; --x:-10vw;">⭐</span>
+                <span class="float-item star" style="--delay:1.8s; --x:15vw;">🌟</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 4: ABOUT NAVTEJ ===================== -->
+    <section id="about-navtej" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">👑</span> Meet the Birthday King <span class="heading-icon">👑</span>
+            </h2>
+            <div class="about-card">
+                <div class="about-avatar-wrap">
+                    <div class="about-avatar" role="img" aria-label="Navtej's photo placeholder">
+                        <i class="bi bi-person-heart"></i>
+                        <span class="avatar-label">Navtej</span>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <h3 class="about-name">Navtej Koli</h3>
+                    <p class="about-detail"><i class="bi bi-calendar-heart"></i> Born: 21 October 2010</p>
+                    <p class="about-detail"><i class="bi bi-stars"></i> Turning: <span id="about-age">16</span> years old</p>
+                    <p class="about-detail"><i class="bi bi-heart-pulse"></i> Status: Most Loved Human</p>
+                    <p class="about-desc">A friend who lights up every room, a brother who makes life magical, and a person whose heart is pure gold. Navtej is the definition of everything beautiful in this world. 💛</p>
+                </div>
+            </div>
+            <div class="nicknames-container">
+                <h4 class="nicknames-title">His Legendary Nicknames 🏷️</h4>
+                <div class="nicknames-wrap">
+                    <span class="nickname-badge" data-tooltip="The OG one">नवत्या</span>
+                    <span class="nickname-badge" data-tooltip="Precious">नकुशी</span>
+                    <span class="nickname-badge" data-tooltip="The Best">टोच्या</span>
+                    <span class="nickname-badge" data-tooltip="Soulmate Friend">जिगरी</span>
+                    <span class="nickname-badge" data-tooltip="Big Heart">दिलदार</span>
+                    <span class="nickname-badge" data-tooltip="The Romantic One">प्रेमी आशिक</span>
+                    <span class="nickname-badge" data-tooltip="King of Hearts">पोरींचा बादशहा</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 5: EMOTIONAL LETTER ===================== -->
+    <section id="emotional-letter" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">💌</span> A Letter From Your Brother <span class="heading-icon">💌</span>
+            </h2>
+            <div class="letter-paper">
+                <div class="letter-header">
+                    <span class="letter-date">21 October 2026</span>
+                    <span class="letter-to">प्रिय नवतेज ला…</span>
+                </div>
+                <div class="letter-body">
+                    <p>अरे भावा, तुझा वाढदिवस आला आणि मी तुझ्या जवळ नाही… 💔</p>
+                    <p>Mujhe pata hai ki tu shayad udaas hoga ki tera bhai aaj tere saath nahi hai. Par yeh website — yeh meri dil se, tere liye banaayi hai. Har ek star, har ek animation, har ek word mein tera bhai ka pyaar hai.</p>
+                    <p>तू फक्त माझा दोस्त नाही — तू माझा <strong>भाऊ</strong> आहेस. लहानपणापासून आपण एकत्र खेळलो, भांडलो, हसलो, रडलो. तुझ्या शिवाय माझं आयुष्य अधुरं आहे रे.</p>
+                    <p>Bacchpan se saath rahe hain — barish mein bheeg ke khelna, school mein ek dusre ke liye ladna, raaton ko phone pe baatein karna. Yeh sab baatein mujhe roz yaad aati hain. 🥺</p>
+                    <p>आज तुला <strong>16 वर्षं</strong> पूर्ण होत आहेत! तू मोठा होतोयस, पण माझ्यासाठी तू नेहमी माझा लहान <em>'नवत्या'</em> राहशील. 😄</p>
+                    <p>Main chahta hoon ki teri zindagi mein hamesha khushiyan rahen, tu hamesha hassta rahe, aur humaari dosti — humaara brotherhood — aisa hi zindagi bhar rahe. 🤝</p>
+                    <p>तुझ्या आयुष्यात सगळ्या चांगल्या गोष्टी यावोत. तुला जे हवं ते मिळो. आणि तू नेहमी असाच माझा <strong>जिगरी</strong>, माझा <strong>दिलदार</strong> राहा. ❤️</p>
+                    <p>Miss you so much yaar. Jaldi milte hain. Tab tak yeh website tere saath hai — jab bhi meri yaad aaye, isse khol lena. 🤗</p>
+                    <p class="letter-closing">Happy Birthday mere bhai. Tujhe duniya ki saari khushiyan milen. 🎂🎁✨</p>
+                </div>
+                <div class="letter-signature">
+                    <p>तुझा भाऊ,</p>
+                    <p class="signature-name">With all my love ❤️</p>
+                    <p class="signature-subtitle">— Your Brother Forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 6: MEMORY TIMELINE ===================== -->
+    <section id="memory-timeline" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">📸</span> Our Memory Lane <span class="heading-icon">📸</span>
+            </h2>
+            <p class="section-subheading">Moments that made our bond unbreakable</p>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-icon">👶</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">2010 — The Beginning</h4>
+                        <p class="timeline-text">21 October 2010 — A star was born. The world became brighter the moment you arrived, Navtej. 🌟</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-icon">🤝</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">First Meeting</h4>
+                        <p class="timeline-text">The day we first met and became friends — little did we know we would become brothers for life. (Replace with your real memory!)</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-icon">🏫</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">School Days</h4>
+                        <p class="timeline-text">Those legendary school days — bunking classes together, sharing tiffins, fighting for each other. The best days ever! 📚</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-icon">🌧️</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">Rainy Adventures</h4>
+                        <p class="timeline-text">Baarish mein bheeg ke khelna — those rainy day adventures when we didn't care about anything. Pure happiness! ☔</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-icon">😂</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">Inside Jokes</h4>
+                        <p class="timeline-text">Those moments that nobody else would understand — our private jokes, our secret codes, our world. Only we know! 🤫</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-icon">🎂</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">2026 — Today!</h4>
+                        <p class="timeline-text">16 years of awesomeness! You're growing up so fast. But our bond? It only gets stronger. Happy Birthday, bhai! 🥳</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 7: PHOTO GALLERY ===================== -->
+    <section id="photo-gallery" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">📷</span> Photo Gallery <span class="heading-icon">📷</span>
+            </h2>
+            <p class="section-subheading">Our best moments captured forever (add your photos!)</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Best friends forever 💛">
+                    <div class="gallery-placeholder" style="--hue:260;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Brothers from another mother 🤝">
+                    <div class="gallery-placeholder" style="--hue:320;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="School memories 📚">
+                    <div class="gallery-placeholder" style="--hue:200;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Fun times together 🎉">
+                    <div class="gallery-placeholder" style="--hue:40;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 4</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Celebrating life 🥳">
+                    <div class="gallery-placeholder" style="--hue:140;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 5</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Our adventures 🌄">
+                    <div class="gallery-placeholder" style="--hue:280;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 6</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Making memories 💫">
+                    <div class="gallery-placeholder" style="--hue:350;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 7</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Forever and always ❤️">
+                    <div class="gallery-placeholder" style="--hue:180;">
+                        <i class="bi bi-camera"></i>
+                        <span>Photo 8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox-overlay" role="dialog" aria-label="Photo viewer" aria-hidden="true">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">&times;</button>
+            <img id="lightbox-img" src="" alt="Gallery photo">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 8: NICKNAME SHOWCASE ===================== -->
+    <section id="nickname-showcase" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">🏷️</span> The Many Names of Navtej <span class="heading-icon">🏷️</span>
+            </h2>
+            <p class="section-subheading">Every nickname tells a story of love</p>
+            <div class="nickname-grid">
+                <div class="nickname-card" style="--card-hue:270;">
+                    <div class="nickname-emoji">😎</div>
+                    <h3 class="nickname-title">नवत्या</h3>
+                    <p class="nickname-subtitle">Navtya</p>
+                    <p class="nickname-desc">The OG nickname — what we call you when we're keeping it 100% real. This is the name that feels like home.</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:330;">
+                    <div class="nickname-emoji">💎</div>
+                    <h3 class="nickname-title">नकुशी</h3>
+                    <p class="nickname-subtitle">Nakushi</p>
+                    <p class="nickname-desc">Because you're precious beyond words. Rare, priceless, and absolutely irreplaceable in our lives.</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:200;">
+                    <div class="nickname-emoji">🏆</div>
+                    <h3 class="nickname-title">टोच्या</h3>
+                    <p class="nickname-subtitle">Tochya</p>
+                    <p class="nickname-desc">Always at the top, the best of the best! In everything you do, you shine the brightest.</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:150;">
+                    <div class="nickname-emoji">🤜🤛</div>
+                    <h3 class="nickname-title">जिगरी</h3>
+                    <p class="nickname-subtitle">Jigri</p>
+                    <p class="nickname-desc">My ride or die. My soulmate friend. The one person I know will ALWAYS have my back, no matter what.</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:20;">
+                    <div class="nickname-emoji">❤️</div>
+                    <h3 class="nickname-title">दिलदार</h3>
+                    <p class="nickname-subtitle">Dildaar</p>
+                    <p class="nickname-desc">The one with the biggest, warmest heart in the world. You care so deeply for everyone around you.</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:300;">
+                    <div class="nickname-emoji">😏</div>
+                    <h3 class="nickname-title">प्रेमी आशिक</h3>
+                    <p class="nickname-subtitle">Premi Aashiq</p>
+                    <p class="nickname-desc">Haha! The romantic one. We all know that look in your eyes. The Bollywood hero of our group!</p>
+                </div>
+                <div class="nickname-card" style="--card-hue:45;">
+                    <div class="nickname-emoji">👑</div>
+                    <h3 class="nickname-title">पोरींचा बादशहा</h3>
+                    <p class="nickname-subtitle">Porincha Baadshah</p>
+                    <p class="nickname-desc">The King of Hearts! The undisputed champion. Need we say more? 😂👑</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 9: BIRTHDAY CAKE ===================== -->
+    <section id="birthday-cake" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">🎂</span> Make a Birthday Wish! <span class="heading-icon">🎂</span>
+            </h2>
+            <p class="section-subheading">Blow out the candles and make your dream come true</p>
+            <div id="cake-display" class="cake-container">
+                <!-- Candles -->
+                <div class="candles-row">
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                </div>
+                <!-- Cake layers -->
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+                <div class="cake-plate"></div>
+                <div class="cake-label">Happy Birthday Navtej! 🎉</div>
+            </div>
+            <div class="cake-buttons">
+                <button id="blow-btn" class="magic-btn" type="button">🌬️ Blow the Candles!</button>
+                <button id="relight-btn" class="magic-btn secondary-btn" type="button" style="display:none;">🔥 Relight Candles</button>
+            </div>
+            <p id="cake-message" class="cake-msg" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 10: WISH UPON A STAR ===================== -->
+    <section id="wish-star" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">⭐</span> Wish Upon a Star <span class="heading-icon">⭐</span>
+            </h2>
+            <p class="section-subheading">Type your heartfelt wish for Navtej and send it to the stars</p>
+            <div class="wish-form">
+                <input type="text" id="wish-input" class="wish-input" placeholder="Type your wish for Navtej…" maxlength="150" aria-label="Type your wish">
+                <button id="wish-btn" class="magic-btn" type="button">⭐ Send Wish to the Stars</button>
+            </div>
+            <div id="wish-sky" class="wish-sky" aria-live="polite">
+                <p class="wish-sky-hint">Your wishes will appear here as glowing stars ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 11: BIRTHDAY GAMES ===================== -->
+    <section id="birthday-games" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">🎮</span> Birthday Memory Game <span class="heading-icon">🎮</span>
+            </h2>
+            <p class="section-subheading">Find all the matching pairs — test your memory!</p>
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Moves</span>
+                    <span class="stat-value" id="game-moves">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Matches</span>
+                    <span class="stat-value" id="game-score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Best</span>
+                    <span class="stat-value" id="game-best">—</span>
+                </div>
+            </div>
+            <div id="game-board" class="game-grid" role="grid" aria-label="Memory card game"></div>
+            <button id="restart-btn" class="magic-btn" type="button" style="margin-top: 1.5rem;">🔄 New Game</button>
+            <p id="game-message" class="game-msg" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 12: SURPRISE GIFT ===================== -->
+    <section id="surprise-gift" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">🎁</span> A Surprise For You! <span class="heading-icon">🎁</span>
+            </h2>
+            <p class="section-subheading">Click the gift box to reveal your special surprise</p>
+            <div class="gift-area">
+                <div id="gift-box" class="gift-box" role="button" tabindex="0" aria-label="Click to open gift">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-base">
+                        <div class="gift-ribbon-v"></div>
+                    </div>
+                </div>
+                <button id="open-gift-btn" class="magic-btn" type="button">🎁 Open Your Gift!</button>
+                <div id="gift-message" class="gift-reveal" aria-live="polite">
+                    <div class="gift-reveal-content">
+                        <h3>🎊 Surprise! 🎊</h3>
+                        <p class="gift-text">Dear Navtej, my gift to you is not something you can wrap — it's a <strong>promise</strong>.</p>
+                        <p class="gift-text">I promise to always be there for you, to always stand by your side, to always be your biggest supporter, and to always love you like a brother. 💝</p>
+                        <p class="gift-text">Aur haan — jab milenge, tujhe tera REAL gift bhi milega! 🎁😉</p>
+                        <p class="gift-emoji-rain" aria-hidden="true">🎉🎊🥳🎂💖🌟✨🎁</p>
+                    </div>
+                </div>
+            </div>
+            <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 13: BROTHERHOOD QUOTES ===================== -->
+    <section id="brotherhood-quotes" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-heading">
+                <span class="heading-icon">🤝</span> Brotherhood & Friendship <span class="heading-icon">🤝</span>
+            </h2>
+            <p class="section-subheading">Words that describe what we share</p>
+            <div id="quotes-carousel" class="quotes-container">
+                <div class="quote-card active">
+                    <blockquote>"A brother is a friend given by nature — and you, Navtej, are the best gift nature ever gave me."</blockquote>
+                    <cite>— Your Brother ❤️</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>"दोस्ती वो नहीं जो रोज़ मिलने से बनती है — दोस्ती वो है जो दूर रहकर भी दिल में ज़िंदा रहती है।"</blockquote>
+                    <cite>— For My Jigri 🤝</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>"Friends come and go, but brothers? Brothers are forever. You are stuck with me for life, Navtya!"</blockquote>
+                    <cite>— Bhai Forever 💪</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>"भाऊ म्हणजे भाऊच — कधी भांडतो, कधी रडतो, पण शेवटी एकमेकांशिवाय राहूच शकत नाही."</blockquote>
+                    <cite>— तुझा भाऊ 🙏</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>"If I had to choose between the world and you, I'd choose you every single time. Happy Birthday, brother."</blockquote>
+                    <cite>— Always Yours 🌍❤️</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>"16 saal ki umar mein itna swag? Bhai tu toh legend hai! Stay awesome, stay YOU!"</blockquote>
+                    <cite>— Proud Brother 🔥</cite>
+                </div>
+            </div>
+            <div class="quote-nav">
+                <button id="quote-prev" class="quote-nav-btn" type="button" aria-label="Previous quote"><i class="bi bi-chevron-left"></i></button>
+                <div id="quote-dots" class="quote-dots"></div>
+                <button id="quote-next" class="quote-nav-btn" type="button" aria-label="Next quote"><i class="bi bi-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 14: BIRTHDAY WALL ===================== -->
+    <section id="birthday-wall" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">
+                <span class="heading-icon">📝</span> Birthday Wishes Wall <span class="heading-icon">📝</span>
+            </h2>
+            <p class="section-subheading">Leave a birthday wish for Navtej — it'll be saved forever!</p>
+            <div class="wall-form">
+                <input type="text" id="wall-name" class="wall-input" placeholder="Your name" maxlength="50" aria-label="Your name">
+                <textarea id="wall-message" class="wall-textarea" placeholder="Write your birthday wish for Navtej…" maxlength="300" rows="3" aria-label="Your birthday wish"></textarea>
+                <button id="post-wish-btn" class="magic-btn" type="button">💌 Post Your Wish</button>
+            </div>
+            <div id="wishes-wall" class="wall-grid" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 15: FOOTER ===================== -->
+    <footer id="footer" class="site-footer">
+        <div class="container text-center">
+            <div class="footer-message">
+                <h3 class="footer-title">Happy Birthday Once Again, Navtej! 🎂</h3>
+                <p class="footer-text">This website was made with all the love in my heart, because I couldn't be there in person but I wanted you to know — you mean the world to me, bhai. 💛</p>
+                <p class="footer-text">तू नेहमी हसत राहा, चमकत राहा, आणि असाच अद्भुत राहा. तुझ्यावर खूप प्रेम आहे! ❤️</p>
+            </div>
+            <div class="footer-hearts" aria-hidden="true">💖💗💝💖💗💝💖💗💝</div>
+            <p class="footer-credit">Made with ❤️ by <strong>Your Brother</strong></p>
+            <p class="footer-copy">&copy; 2026 — Happy Birthday Navtej Koli — All Love Reserved 💕</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
